@@ -1,0 +1,18 @@
+## Interface: 11304
+## Title: CEPGP Periodic EP
+## Author: Jick
+## Version: 1.0.0
+## SavedVariables: CEPGP_PeriodicEP_DB
+## Dependencies: CEPGP
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
+
+embeds.xml
+
+Locale\enUS.lua
+
+Frames.xml
+
+Core.lua
+Ticker.lua
+Warning.lua
