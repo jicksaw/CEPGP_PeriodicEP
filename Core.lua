@@ -28,14 +28,14 @@ local options = {
         start = {
             type = "execute",
             name = "Start/Resume",
-            desc = "Starts or resumes the ticking EP",
+            desc = "Resumes the ticking EP",
             disabled = function()
                 return CEPGP_PeriodicEP.tickerState == "running" or not CEPGP_PeriodicEP:IsEnabled()
             end,
             func = function()
                 if CEPGP_PeriodicEP.tickerState == "stopped" then
                     CEPGP_PeriodicEP:TickerStart()
-                else
+                elseif CEPGP_PeriodicEP.tickerState == "paused" then
                     CEPGP_PeriodicEP:TickerResume()
                 end
             end
@@ -49,6 +49,21 @@ local options = {
             end,
             func = function()
                 CEPGP_PeriodicEP:TickerPause()
+            end
+        },
+        toggle = {
+            type = "execute",
+            name = "Toggle",
+            desc = "Starts or pauses the ticking EP",
+            guiHidden = true,
+            func = function()
+                if CEPGP_PeriodicEP.tickerState == "stopped" then
+                    CEPGP_PeriodicEP:TickerStart()
+                elseif CEPGP_PeriodicEP.tickerState == "paused" then
+                    CEPGP_PeriodicEP:TickerResume()
+                elseif CEPGP_PeriodicEP.tickerState == "running" then
+                    CEPGP_PeriodicEP:TickerPause()
+                end
             end
         },
         periodic_ep = {
