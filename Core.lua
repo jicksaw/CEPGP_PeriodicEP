@@ -29,6 +29,7 @@ local options = {
             type = "execute",
             name = "Start/Resume",
             desc = "Resumes the ticking EP",
+            order = 10,
             disabled = function()
                 return CEPGP_PeriodicEP.tickerState == "running" or not CEPGP_PeriodicEP:IsEnabled()
             end,
@@ -44,6 +45,7 @@ local options = {
             type = "execute",
             name = "Pause",
             desc = "Pauses the ticking EP",
+            order = 11,
             disabled = function()
                 return CEPGP_PeriodicEP.tickerState ~= "running"
             end,
