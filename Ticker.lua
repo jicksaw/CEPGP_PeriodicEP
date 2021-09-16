@@ -12,7 +12,7 @@ function CEPGP_PeriodicEP:TickerStart()
 
   local message =
     "Periodic EP started: " .. self.db.profile.amount .. " EP every " .. self.db.profile.period .. " minutes"
-  CEPGP_sendChatMessage(message, CHANNEL)
+  CEPGP_sendChatMessage(message, CEPGP.Channel)
 end
 
 function CEPGP_PeriodicEP:TickerPause()
@@ -29,7 +29,7 @@ function CEPGP_PeriodicEP:TickerPause()
   periodic_ep_ticker_paused_dialog:Show()
 
   local message = "Periodic EP paused"
-  CEPGP_sendChatMessage(message, CHANNEL)
+  CEPGP_sendChatMessage(message, CEPGP.Channel)
 end
 
 function CEPGP_PeriodicEP:TickerResume()
@@ -44,7 +44,7 @@ function CEPGP_PeriodicEP:TickerResume()
   periodic_ep_ticker_paused_dialog:Hide()
 
   local message = "Periodic EP resumed"
-  CEPGP_sendChatMessage(message, CHANNEL)
+  CEPGP_sendChatMessage(message, CEPGP.Channel)
 end
 
 function CEPGP_PeriodicEP:TickerStop()
@@ -66,7 +66,7 @@ function CEPGP_PeriodicEP:TickerAwardLeftover(minutes)
   periodic_ep_ticker_stopped_dialog:Hide()
 
   if minutes <= 0 then
-    CEPGP_sendChatMessage("Periodic EP stopped", CHANNEL)
+    CEPGP_sendChatMessage("Periodic EP stopped", CEPGP.Channel)
     return
   end
 

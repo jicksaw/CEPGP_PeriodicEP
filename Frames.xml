@@ -1,24 +1,14 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
-  <Frame name="periodic_ep_ticker_paused_dialog" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true">
-      <Size>
-        <AbsDimension x="200" y="75"/>
-      </Size>
+  <Frame name="periodic_ep_ticker_paused_dialog" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true" inherits="BackdropTemplate">
+    <KeyValues>
+        <KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global"/>
+    </KeyValues>
+      <Size x="200" y="75"/>
       <Anchors>
         <Anchor point="CENTER"/>
       </Anchors>
-      <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-        <BackgroundInsets>
-          <AbsInset left="11" right="12" top="12" bottom="11"/>
-        </BackgroundInsets>
-        <TileSize>
-          <AbsValue val="32"/>
-        </TileSize>
-        <EdgeSize>
-          <AbsValue val="32"/>
-        </EdgeSize>
-      </Backdrop>
       <Layers>
         <Layer level="ARTWORK">
           <Texture file="Interface\DialogFrame\UI-DialogBox-Header">
@@ -85,7 +75,7 @@
         </Button>
       </Frames>
       <Scripts>
-        <OnLoad>
+        <OnLoad inherit="prepend">
           self:RegisterForDrag("LeftButton");
         </OnLoad>
         <OnDragStart>
@@ -96,24 +86,14 @@
         </OnDragStop>
       </Scripts>
   </Frame>
-  <Frame name="periodic_ep_ticker_stopped_dialog" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true">
-      <Size>
-        <AbsDimension x="310" y="150"/>
-      </Size>
+  <Frame name="periodic_ep_ticker_stopped_dialog" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true" inherits="BackdropTemplate">
+    <KeyValues>
+        <KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global"/>
+    </KeyValues>
+      <Size x="310" y="150"/>
       <Anchors>
         <Anchor point="CENTER"/>
       </Anchors>
-      <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-        <BackgroundInsets>
-          <AbsInset left="11" right="12" top="12" bottom="11"/>
-        </BackgroundInsets>
-        <TileSize>
-          <AbsValue val="32"/>
-        </TileSize>
-        <EdgeSize>
-          <AbsValue val="32"/>
-        </EdgeSize>
-      </Backdrop>
       <Layers>
         <Layer level="ARTWORK">
           <Texture file="Interface\DialogFrame\UI-DialogBox-Header">
@@ -184,7 +164,7 @@
                 </Anchor>
               </Anchors>
               <Scripts>
-                <OnLoad>
+                <OnLoad inherit="prepend">
                   self:SetAutoFocus(false);
                 </OnLoad>
                 <OnShow>
@@ -243,7 +223,7 @@
         </Button>
       </Frames>
       <Scripts>
-        <OnLoad>
+        <OnLoad inherit="prepend">
           self:RegisterForDrag("LeftButton");
         </OnLoad>
         <OnDragStart>

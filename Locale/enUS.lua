@@ -15,5 +15,5 @@ if L then
     L["Plugin not enabled in the plugin manager"] = "Plugin not enabled in the plugin manager"
 
     L["Start periodic EP?"] = "Start periodic EP?"
-    L["Warn if periodic EP hasn't been started after entering an instance"] = "Warn if periodic EP hasn't been started after entering an instance"
+    L["Remind to start Periodic EP in an instance"] = "Remind to start Periodic EP in an instance"
 end

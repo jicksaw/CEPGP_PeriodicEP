@@ -106,36 +106,50 @@ local options = {
                 }
             }
         },
-        auto_warn = {
+        reminder = {
             type = "group",
-            name = "Auto Warn",
+            name = "Start Reminder",
+	    get = function(info, key)
+		return CEPGP_PeriodicEP.db.profile.warnIfNotRunning[key]
+	    end,
+	    set = function(info, key, value)
+		CEPGP_PeriodicEP.db.profile.warnIfNotRunning[key] = value
+	    end,
             args = {
                 desc = {
                     type = "description",
                     order = 0,
-                    name = L["Warn if periodic EP hasn't been started after entering an instance"]
+                    name = L["Remind to start Periodic EP in an instance"]
                 },
-                instances = {
-                    type = "multiselect",
-                    name = "Instances",
-                    values = {
-                        [249] = "Onyxia",
-                        [409] = "MC",
-                        [469] = "BWL",
-                        [309] = "ZG",
-                        [509] = "AQ20",
-                        [531] = "AQ40",
-                        [533] = "Naxx"
-                    },
-                    get = function(info, key)
-                        return CEPGP_PeriodicEP.db.profile.warnIfNotRunning[key]
-                    end,
-                    set = function(info, key, value)
-                        CEPGP_PeriodicEP.db.profile.warnIfNotRunning[key] = value
-                    end
-                }
-            }
-        }
+		vanilla = {
+		    type = "multiselect",
+		    name = "Vanilla",
+		    values = {
+			[249] = "Onyxia",
+			[409] = "Molten Core",
+			[469] = "Blackwing Lair",
+			[309] = "Zul'gurub",
+			[509] = "Ruins of Ahn'Qiraj (AQ20)",
+			[531] = "Temple of Ahn'Qiraj (AQ40)",
+			[533] = "Naxxramas"
+		    },
+		},
+		tbc = {
+		    type = "multiselect",
+		    name = "The Burning Crusade",
+		    values = {
+			[532] = "Karazhan",
+			[565] = "Gruul's Lair",
+			[544] = "Magtheridon's Lair",
+			[548] = "Serpentshrine Cavern",
+			[550] = "Tempest Keep",
+			[534] = "Hyjal Summit",
+			[564] = "Black Temple",
+			[580] = "Sunwell Plateau",
+		    },
+		},
+	    }
+	}
     }
 }
 

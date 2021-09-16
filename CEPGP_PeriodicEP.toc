@@ -1,7 +1,7 @@
-## Interface: 11304
+## Interface: 20502
 ## Title: CEPGP Periodic EP
 ## Author: Jick
-## Version: 1.0.0
+## Version: 1.1.0
 ## SavedVariables: CEPGP_PeriodicEP_DB
 ## Dependencies: CEPGP
 ## OptionalDeps: Ace3
