@@ -1,237 +1,237 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
   <Frame name="periodic_ep_ticker_paused_dialog" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true" inherits="BackdropTemplate">
     <KeyValues>
-        <KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global"/>
+      <KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global"/>
     </KeyValues>
-      <Size x="200" y="75"/>
-      <Anchors>
-        <Anchor point="CENTER"/>
-      </Anchors>
-      <Layers>
-        <Layer level="ARTWORK">
-          <Texture file="Interface\DialogFrame\UI-DialogBox-Header">
-            <Size>
-              <AbsDimension x="256" y="64"/>
-            </Size>
-            <Anchors>
-              <Anchor point="TOP">
-                <Offset>
-                  <AbsDimension x="0" y="12"/>
-                </Offset>
-              </Anchor>
-            </Anchors>
-          </Texture>
-        </Layer>
-        <Layer level="OVERLAY">
-          <FontString name="$parent_header" inherits="GameFontNormal" text="Periodic EP Paused">
-            <Anchors>
-              <Anchor point="TOP">
-                <Offset>
-                  <AbsDimension x="0" y="-2"/>
-                </Offset>
-              </Anchor>
-            </Anchors>
-          </FontString>
-        </Layer>
-      </Layers>
-      <Frames>
-        <Button name="$parent_stop" inherits="GameMenuButtonTemplate" text="Stop">
+    <Size x="200" y="75"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="ARTWORK">
+        <Texture file="Interface\DialogFrame\UI-DialogBox-Header">
           <Size>
-            <AbsDimension x="75" y="30"/>
+            <AbsDimension x="256" y="64"/>
           </Size>
           <Anchors>
-            <Anchor point="BOTTOMLeft">
+            <Anchor point="TOP">
               <Offset>
-                <AbsDimension x="16" y="16"/>
+                <AbsDimension x="0" y="12"/>
               </Offset>
             </Anchor>
           </Anchors>
-          <Scripts>
-            <OnClick>
-              PlaySound(799);
-              CEPGP_PeriodicEP:TickerStop();
-            </OnClick>
-          </Scripts>
-        </Button>
-        <Button name="$parent_resume" inherits="GameMenuButtonTemplate" text="Resume">
-          <Size>
-            <AbsDimension x="75" y="30"/>
-          </Size>
+        </Texture>
+      </Layer>
+      <Layer level="OVERLAY">
+        <FontString name="$parent_header" inherits="GameFontNormal" text="Periodic EP Paused">
           <Anchors>
-            <Anchor point="BOTTOMRIGHT">
+            <Anchor point="TOP">
               <Offset>
-                <AbsDimension x="-16" y="16"/>
+                <AbsDimension x="0" y="-2"/>
               </Offset>
             </Anchor>
           </Anchors>
-          <Scripts>
-            <OnClick>
-              PlaySound(799);
-              CEPGP_PeriodicEP:TickerResume();
-            </OnClick>
-          </Scripts>
-        </Button>
-      </Frames>
-      <Scripts>
-        <OnLoad inherit="prepend">
-          self:RegisterForDrag("LeftButton");
-        </OnLoad>
-        <OnDragStart>
-          self:StartMoving();
-        </OnDragStart>
-        <OnDragStop>
-          self:StopMovingOrSizing();
-        </OnDragStop>
-      </Scripts>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Button name="$parent_stop" inherits="GameMenuButtonTemplate" text="Stop">
+        <Size>
+          <AbsDimension x="75" y="30"/>
+        </Size>
+        <Anchors>
+          <Anchor point="BOTTOMLeft">
+            <Offset>
+              <AbsDimension x="16" y="16"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            PlaySound(799);
+            CEPGP_PeriodicEP:TickerStop();
+          </OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parent_resume" inherits="GameMenuButtonTemplate" text="Resume">
+        <Size>
+          <AbsDimension x="75" y="30"/>
+        </Size>
+        <Anchors>
+          <Anchor point="BOTTOMRIGHT">
+            <Offset>
+              <AbsDimension x="-16" y="16"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            PlaySound(799);
+            CEPGP_PeriodicEP:TickerResume();
+          </OnClick>
+        </Scripts>
+      </Button>
+    </Frames>
+    <Scripts>
+      <OnLoad inherit="prepend">
+        self:RegisterForDrag("LeftButton");
+      </OnLoad>
+      <OnDragStart>
+        self:StartMoving();
+      </OnDragStart>
+      <OnDragStop>
+        self:StopMovingOrSizing();
+      </OnDragStop>
+    </Scripts>
   </Frame>
   <Frame name="periodic_ep_ticker_stopped_dialog" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true" inherits="BackdropTemplate">
     <KeyValues>
-        <KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global"/>
+      <KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global"/>
     </KeyValues>
-      <Size x="310" y="150"/>
-      <Anchors>
-        <Anchor point="CENTER"/>
-      </Anchors>
-      <Layers>
-        <Layer level="ARTWORK">
-          <Texture file="Interface\DialogFrame\UI-DialogBox-Header">
-            <Size>
-              <AbsDimension x="256" y="64"/>
-            </Size>
-            <Anchors>
-              <Anchor point="TOP">
-                <Offset>
-                  <AbsDimension x="0" y="12"/>
-                </Offset>
-              </Anchor>
-            </Anchors>
-          </Texture>
-        </Layer>
-        <Layer level="OVERLAY">
-          <FontString name="$parent_header" inherits="GameFontNormal" text="Periodic EP Stopped">
-            <Anchors>
-              <Anchor point="TOP">
-                <Offset>
-                  <AbsDimension x="0" y="-2"/>
-                </Offset>
-              </Anchor>
-            </Anchors>
-          </FontString>
-        </Layer>
-      </Layers>
-      <Frames>
-        <Frame name="$parent_leftover">
+    <Size x="310" y="150"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="ARTWORK">
+        <Texture file="Interface\DialogFrame\UI-DialogBox-Header">
           <Size>
-            <RelDimension x="1" y="0.25"/>
+            <AbsDimension x="256" y="64"/>
           </Size>
           <Anchors>
-            <Anchor point="LEFT">
+            <Anchor point="TOP">
               <Offset>
-                <AbsDimension x="20" y="10"/>
+                <AbsDimension x="0" y="12"/>
               </Offset>
             </Anchor>
           </Anchors>
-          <Layers>
-            <Layer level="OVERLAY">
-              <FontString name="$parent_text" inherits="GameFontNormal" text="Award EP for the" nonspacewrap="True">
-                <Anchors>
-                  <Anchor point="LEFT"/>
-                </Anchors>
-              </FontString>
-              <FontString name="$parent_text_2" inherits="GameFontNormal" text="minutes since last tick?">
-                  <Anchors>
-                    <Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parent_text">
-                      <Offset>
-                        <AbsDimension x="35" y="0"/>
-                      </Offset>
-                    </Anchor>
-                  </Anchors>
-                </FontString>
-            </Layer>
-          </Layers>
-          <Frames>
-            <EditBox name="$parent_amount" inherits="InputBoxTemplate" numeric="true" letters="2">
-              <Size>
-                <AbsDimension x="20" y="20" />
-              </Size>
+        </Texture>
+      </Layer>
+      <Layer level="OVERLAY">
+        <FontString name="$parent_header" inherits="GameFontNormal" text="Periodic EP Stopped">
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset>
+                <AbsDimension x="0" y="-2"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Frame name="$parent_leftover">
+        <Size>
+          <RelDimension x="1" y="0.25"/>
+        </Size>
+        <Anchors>
+          <Anchor point="LEFT">
+            <Offset>
+              <AbsDimension x="20" y="10"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Layers>
+          <Layer level="OVERLAY">
+            <FontString name="$parent_text" inherits="GameFontNormal" text="Award EP for the" nonspacewrap="True">
+              <Anchors>
+                <Anchor point="LEFT"/>
+              </Anchors>
+            </FontString>
+            <FontString name="$parent_text_2" inherits="GameFontNormal" text="minutes since last tick?">
               <Anchors>
                 <Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parent_text">
                   <Offset>
-                    <AbsDimension x="10" y="0" />
+                    <AbsDimension x="35" y="0"/>
                   </Offset>
                 </Anchor>
               </Anchors>
-              <Scripts>
-                <OnLoad inherit="prepend">
-                  self:SetAutoFocus(false);
-                </OnLoad>
-                <OnShow>
-                  local minutes = floor(CEPGP_PeriodicEP.ticker_timer_leftover / 60);
-                  self:SetText(minutes);
-                </OnShow>
-                <OnEnterPressed>
-                  self:ClearFocus();
-                </OnEnterPressed>
-                <OnEditFocusLost>
-                  if self:GetText() == "" then
-                    self:SetText("0");
-                  end
-                </OnEditFocusLost>
-              </Scripts>
-            </EditBox>
-          </Frames>
-        </Frame>
-        <Button name="$parent_no" inherits="GameMenuButtonTemplate" text="No">
-          <Size>
-            <AbsDimension x="75" y="30"/>
-          </Size>
-          <Anchors>
-            <Anchor point="BOTTOMLEFT">
-              <Offset>
-                <AbsDimension x="16" y="16"/>
-              </Offset>
-            </Anchor>
-          </Anchors>
-          <Scripts>
-            <OnClick>
-              PlaySound(799);
-              self:GetParent():Hide();
-		          CEPGP_sendChatMessage("Periodic EP stopped", CHANNEL)
-            </OnClick>
-          </Scripts>
-        </Button>
-        <Button name="$parent_yes" inherits="GameMenuButtonTemplate" text="Yes">
-          <Size>
-            <AbsDimension x="75" y="30"/>
-          </Size>
-          <Anchors>
-            <Anchor point="BOTTOMRIGHT">
-              <Offset>
-                <AbsDimension x="-16" y="16"/>
-              </Offset>
-            </Anchor>
-          </Anchors>
-          <Scripts>
-            <OnClick>
-              PlaySound(799);
-              local minutes = tonumber(periodic_ep_ticker_stopped_dialog_leftover_amount:GetText());
-              CEPGP_PeriodicEP:TickerAwardLeftover(minutes);
-            </OnClick>
-          </Scripts>
-        </Button>
-      </Frames>
-      <Scripts>
-        <OnLoad inherit="prepend">
-          self:RegisterForDrag("LeftButton");
-        </OnLoad>
-        <OnDragStart>
-          self:StartMoving();
-        </OnDragStart>
-        <OnDragStop>
-          self:StopMovingOrSizing();
-        </OnDragStop>
-      </Scripts>
+            </FontString>
+          </Layer>
+        </Layers>
+        <Frames>
+          <EditBox name="$parent_amount" inherits="InputBoxTemplate" numeric="true" letters="2">
+            <Size>
+              <AbsDimension x="20" y="20" />
+            </Size>
+            <Anchors>
+              <Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parent_text">
+                <Offset>
+                  <AbsDimension x="10" y="0" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Scripts>
+              <OnLoad inherit="prepend">
+                self:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                local minutes = floor(CEPGP_PeriodicEP.ticker_timer_leftover / 60);
+                self:SetText(minutes);
+              </OnShow>
+              <OnEnterPressed>
+                self:ClearFocus();
+              </OnEnterPressed>
+              <OnEditFocusLost>
+                if self:GetText() == "" then
+                self:SetText("0");
+                end
+              </OnEditFocusLost>
+            </Scripts>
+          </EditBox>
+        </Frames>
+      </Frame>
+      <Button name="$parent_no" inherits="GameMenuButtonTemplate" text="No">
+        <Size>
+          <AbsDimension x="75" y="30"/>
+        </Size>
+        <Anchors>
+          <Anchor point="BOTTOMLEFT">
+            <Offset>
+              <AbsDimension x="16" y="16"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            PlaySound(799);
+            self:GetParent():Hide();
+	    CEPGP_sendChatMessage("Periodic EP stopped", CHANNEL)
+          </OnClick>
+        </Scripts>
+      </Button>
+      <Button name="$parent_yes" inherits="GameMenuButtonTemplate" text="Yes">
+        <Size>
+          <AbsDimension x="75" y="30"/>
+        </Size>
+        <Anchors>
+          <Anchor point="BOTTOMRIGHT">
+            <Offset>
+              <AbsDimension x="-16" y="16"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            PlaySound(799);
+            local minutes = tonumber(periodic_ep_ticker_stopped_dialog_leftover_amount:GetText());
+            CEPGP_PeriodicEP:TickerAwardLeftover(minutes);
+          </OnClick>
+        </Scripts>
+      </Button>
+    </Frames>
+    <Scripts>
+      <OnLoad inherit="prepend">
+        self:RegisterForDrag("LeftButton");
+      </OnLoad>
+      <OnDragStart>
+        self:StartMoving();
+      </OnDragStart>
+      <OnDragStop>
+        self:StopMovingOrSizing();
+      </OnDragStop>
+    </Scripts>
   </Frame>
 </Ui>
