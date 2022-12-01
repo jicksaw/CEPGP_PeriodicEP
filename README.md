@@ -4,3 +4,6 @@ A plugin for the WoW Classic addon [CEPGP](https://github.com/Alumian/CEPGP-Reta
 
 **/pep** to list commands  
 **/pep show** to open the configuration menu
+
+# Deprecated
+Not updated since TBC Classic
